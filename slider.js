@@ -329,7 +329,7 @@
     };
   };
 
-  qualifiedDirectiveDefinition = ['$timeout', '$interpolate', sliderDirective];
+  qualifiedDirectiveDefinition = ['$timeout', sliderDirective];
 
   module = function(window, angular) {
     return angular.module(MODULE_NAME, []).directive(SLIDER_TAG, qualifiedDirectiveDefinition);

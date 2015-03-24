@@ -242,7 +242,6 @@ sliderDirective = ($timeout) ->
 
 qualifiedDirectiveDefinition = [
   '$timeout',
-  '$interpolate',
   sliderDirective
 ]
 
