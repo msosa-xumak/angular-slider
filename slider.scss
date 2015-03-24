@@ -26,33 +26,12 @@ slider, [slider] {
     }
 
     &.handle {
-      cursor: pointer;
-      width: 20px;
-      height: 20px;
+      cursor: pointer;      
       top: -8px;
       background-color: #fff;
       border: 1px solid #000;
+      padding: 3px 5px;
       z-index: 2;
-      border-radius: 100%;
-
-      &:after {
-        content: '';
-        background-color: #777;
-        width: 8px;
-        height: 8px;
-        position: absolute;
-        top: 6px;
-        left: 6px;
-        border-radius: 100%;
-
-        &:hover {
-          background-color: #000;
-        }
-      }
-
-      &.active:after {
-        background-color: #f00;
-      }
     }
 
     &.bubble {
@@ -63,7 +42,8 @@ slider, [slider] {
       font-size: 0.7em;
       font-family: sans-serif;
 
-      &.active {
+      &.active,
+      &.value {
         display: inline-block;
       }
 

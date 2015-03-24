@@ -21,42 +21,28 @@ slider div.bar, [slider] div.bar {
   overflow: hidden;
 }
 /* line 21, slider.scss */
+slider div.bar:before, slider div.bar:after, [slider] div.bar:before, [slider] div.bar:after {
+  content: "";
+  width: 1px;
+  height: 5px;
+  background: red;
+}
+/* line 29, slider.scss */
 slider div.bar .selection, [slider] div.bar .selection {
   width: 0%;
   height: 100%;
   background: #13b6ff;
 }
-/* line 28, slider.scss */
+/* line 36, slider.scss */
 slider div.handle, [slider] div.handle {
   cursor: pointer;
-  width: 20px;
-  height: 20px;
   top: -8px;
   background-color: #fff;
   border: 1px solid #000;
+  padding: 3px 5px;
   z-index: 2;
-  border-radius: 100%;
 }
-/* line 38, slider.scss */
-slider div.handle:after, [slider] div.handle:after {
-  content: '';
-  background-color: #777;
-  width: 8px;
-  height: 8px;
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  border-radius: 100%;
-}
-/* line 48, slider.scss */
-slider div.handle:after:hover, [slider] div.handle:after:hover {
-  background-color: #000;
-}
-/* line 53, slider.scss */
-slider div.handle.active:after, [slider] div.handle.active:after {
-  background-color: #f00;
-}
-/* line 58, slider.scss */
+/* line 45, slider.scss */
 slider div.bubble, [slider] div.bubble {
   display: none;
   cursor: default;
@@ -65,11 +51,11 @@ slider div.bubble, [slider] div.bubble {
   font-size: 0.7em;
   font-family: sans-serif;
 }
-/* line 66, slider.scss */
-slider div.bubble.active, [slider] div.bubble.active {
+/* line 53, slider.scss */
+slider div.bubble.active, slider div.bubble.value, [slider] div.bubble.active, [slider] div.bubble.value {
   display: inline-block;
 }
-/* line 70, slider.scss */
+/* line 58, slider.scss */
 slider div.bubble.limit, [slider] div.bubble.limit {
   color: #777;
 }

@@ -56,12 +56,15 @@ sliderDirective = ($timeout) ->
     ngModel:      '=?'
     ngModelLow:   '=?'
     ngModelHigh:  '=?'
+    label:        '=?'
+    ngChange:     '&'
+    transformFn:  '&'
   template: '''
     <div class="bar"><div class="selection"></div></div>
-    <div class="handle low"></div><div class="handle high"></div>
+    <div class="handle low"><span class="label">{{label}}</span></div><div class="handle high"></div>
     <div class="bubble limit low">{{ values.length ? values[floor || 0] : floor }}</div>
     <div class="bubble limit high">{{ values.length ? values[ceiling || values.length - 1] : ceiling }}</div>
-    <div class="bubble value low">{{ values.length ? values[local.ngModelLow || local.ngModel || 0] : local.ngModelLow || local.ngModel || 0 }}</div>
+    <div class="bubble value low">{{ bubbleValue() }}</div>
     <div class="bubble value high">{{ values.length ? values[local.ngModelHigh] : local.ngModelHigh }}</div>'''
   compile: (element, attributes) ->
 
@@ -92,6 +95,19 @@ sliderDirective = ($timeout) ->
       bound = false
       ngDocument = angularize document
       handleHalfWidth = barWidth = minOffset = maxOffset = minValue = maxValue = valueRange = offsetRange = undefined
+
+      # Tranform and changes notify functions
+      transformFn = scope.transformFn() or null
+      changeFn = scope.ngChange() or null
+
+      scope.bubbleValue = ->        
+        if scope.values?.length 
+        then value = scope.values[local.ngModelLow or scope.local.ngModel or 0] 
+        else value = scope.local.ngModelLow or scope.local.ngModel or 0
+
+        unless transformFn
+          return value        
+        transformFn value
 
       dimensions = ->
         # roundStep the initial score values
@@ -160,6 +176,9 @@ sliderDirective = ($timeout) ->
               scope[high] = scope.local[high]
               scope[low] = scope.local[low]
             currentRef = ref
+                      
+            changeFn scope.label, scope.local[low] if changeFn
+            
             scope.$apply()
           onMove = (event) ->
             eventX = event.clientX or event.touches?[0].clientX or event.originalEvent?.changedTouches?[0].clientX or 0
@@ -196,7 +215,6 @@ sliderDirective = ($timeout) ->
             unless scope.dragstop
               scope[currentRef] = newValue
             setPointers()
-
             scope.$apply()
           onStart = (event) ->
             dimensions()
@@ -223,7 +241,8 @@ sliderDirective = ($timeout) ->
       window.addEventListener 'resize', updateDOM
 
 qualifiedDirectiveDefinition = [
-  '$timeout'
+  '$timeout',
+  '$interpolate',
   sliderDirective
 ]
 
