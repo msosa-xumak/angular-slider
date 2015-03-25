@@ -102,7 +102,7 @@ sliderDirective = ($timeout) ->
 
       scope.bubbleValue = ->        
         if scope.values?.length 
-        then value = scope.values[local.ngModelLow or scope.local.ngModel or 0] 
+        then value = scope.values[local.local.ngModelLow or scope.local.ngModel or 0] 
         else value = scope.local.ngModelLow or scope.local.ngModel or 0
 
         unless transformFn
