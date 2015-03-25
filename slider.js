@@ -147,7 +147,7 @@
             scope.bubbleValue = function() {
               var ref3, value;
               if ((ref3 = scope.values) != null ? ref3.length : void 0) {
-                value = scope.values[local.local.ngModelLow || scope.local.ngModel || 0];
+                value = scope.values[scioepe.local.ngModelLow || scope.local.ngModel || 0];
               } else {
                 value = scope.local.ngModelLow || scope.local.ngModel || 0;
               }
