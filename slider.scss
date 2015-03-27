@@ -36,6 +36,14 @@ slider, [slider] {
       z-index: 2;
     }
 
+    &.handle:before {
+      content: url(../../images/content/caretl.png);
+    }
+
+    &.handle:after {
+      content: url(../../images/content/caretr.png);
+    }
+
     &.bubble {
       display: none;
       cursor: default;
