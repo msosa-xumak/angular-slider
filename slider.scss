@@ -16,12 +16,32 @@ slider, [slider] {
       height: 17%;
       border-radius: $height;
       background: #063B73;
-      overflow: hidden;
 
       .selection {
         width: 0%;
         height: 100%;
         background: #13b6ff;
+      }
+
+      &:before,
+      &:after {
+        display: block;
+        content: '';
+        height: 9px;
+        width: 1px;
+        background: #063B73;
+        position: absolute;
+        z-index: 0;
+      }
+
+      &:before {
+        left: 0;
+        top: -4px;
+      }
+
+      &:after {
+        right: 0;
+        top: -4px;
       }
     }
 
