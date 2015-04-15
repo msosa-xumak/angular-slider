@@ -56,12 +56,23 @@ slider, [slider] {
       z-index: 2;
     }
 
+    &.handle:before {
+      content: url(../../assets/images/content/caretl.png);
+      padding-right: .5rem;
+    }
+
+    &.handle:after {
+      content: url(../../assets/images/content/caretr.png);
+      padding-left: .5rem;
+    }
+
     &.bubble {
       display: none;
       cursor: default;
       top: -40px;
       padding: 1px 3px 1px 3px;
       font-size: 3rem;
+      font-weight: lighter;
 
       &.active,
       &.value {
