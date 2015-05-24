@@ -57,7 +57,7 @@ slider div.handle, [slider] div.handle {
   z-index: 2;
 }
 /* line 58, slider.scss */
-slider div.handle.label, [slider] div.handle.label {
+slider div.handle .label, [slider] div.handle .label {
   padding: 0 8px;
 }
 /* line 63, slider.scss */
