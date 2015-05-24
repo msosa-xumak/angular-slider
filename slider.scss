@@ -61,13 +61,13 @@ slider, [slider] {
     }
 
     &.handle:before {
-      content: url(../../assets/images/content/caretl.png);
+      content: url(/assets/images/content/caretl.png);
       position: relative;
       left: 0;
     }
 
     &.handle:after {
-      content: url(../../assets/images/content/caretr.png);
+      content: url(/assets/images/content/caretr.png);
       position: relative;
       right: 0;
     }

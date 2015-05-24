@@ -62,13 +62,13 @@ slider div.handle.label, [slider] div.handle.label {
 }
 /* line 63, slider.scss */
 slider div.handle:before, [slider] div.handle:before {
-  content: url(../../assets/images/content/caretl.png);
+  content: url(/assets/images/content/caretl.png);
   position: relative;
   left: 0;
 }
 /* line 69, slider.scss */
 slider div.handle:after, [slider] div.handle:after {
-  content: url(../../assets/images/content/caretr.png);
+  content: url(/assets/images/content/caretr.png);
   position: relative;
   right: 0;
 }
