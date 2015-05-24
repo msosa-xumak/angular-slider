@@ -46,24 +46,30 @@ slider, [slider] {
     }
 
     &.handle {
-      cursor: pointer;      
-      top: -8px;
+      cursor: pointer;
+      top: -11px;
       background-color: #063B73;
       border-radius:4px;
       color: #FFFFFF;
       padding: 3px 5px;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       z-index: 2;
+
+      &.label {
+        padding: 0 8px;
+      }
     }
 
     &.handle:before {
       content: url(../../assets/images/content/caretl.png);
-      padding-right: .5rem;
+      position: relative;
+      left: 0;
     }
 
     &.handle:after {
       content: url(../../assets/images/content/caretr.png);
-      padding-left: .5rem;
+      position: relative;
+      right: 0;
     }
 
     &.bubble {
