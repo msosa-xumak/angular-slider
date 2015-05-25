@@ -75,9 +75,10 @@ slider, [slider] {
     &.bubble {
       display: none;
       cursor: default;
-      top: -40px;
+      top: -35px;
       padding: 1px 3px 1px 3px;
       font-size: 3rem;
+      line-height: 2.8rem;
       font-weight: lighter;
 
       &.active,

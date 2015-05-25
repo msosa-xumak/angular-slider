@@ -76,16 +76,17 @@ slider div.handle:after, [slider] div.handle:after {
 slider div.bubble, [slider] div.bubble {
   display: none;
   cursor: default;
-  top: -40px;
+  top: -35px;
   padding: 1px 3px 1px 3px;
   font-size: 3rem;
+  line-height: 2.8rem;
   font-weight: lighter;
 }
-/* line 83, slider.scss */
+/* line 84, slider.scss */
 slider div.bubble.active, slider div.bubble.value, [slider] div.bubble.active, [slider] div.bubble.value {
   display: inline-block;
 }
-/* line 88, slider.scss */
+/* line 89, slider.scss */
 slider div.bubble.limit, [slider] div.bubble.limit {
   color: #777;
 }
